@@ -1,0 +1,19 @@
+.venv/
+node_modules
+out/
+.DS_Store
+data.db
+*.pyc
+build/
+storage/
+chroma.log
+dist/
+download_punkt.py
+*.spec
+pyvenv.cfg
+# scaffold mentor wiki (local learner ledger)
+scaffold-wiki/
+.pytest_cache/
+# local secrets, never committed (course copy addition 2026-09-02)
+.env
+.env.*

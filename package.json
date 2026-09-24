@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "mgplus": "^1.4.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "build": "esbuild ./frontend/src/index.jsx --bundle --outdir=./frontend/out",
+    "start": "npm run setup && npm run build && ./.venv/bin/python backend/main.py",
+    "worker": "./.venv/bin/python backend/worker.py",
+    "test": "npm run test:frontend; frontend=$?; npm run test:backend && exit $frontend",
+    "test:backend": "./.venv/bin/python -m pytest",
+    "test:frontend": "vitest run",
+    "test:no-ollama": "npm run test:frontend; f=$?; ./.venv/bin/python -m pytest -m \"not ollama\"; b=$?; [ $f -eq 0 ] && [ $b -eq 0 ]"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "esbuild": "^0.28.2",
+    "jsdom": "30.0.1",
+    "vitest": "4.1.11"
+  }
+}

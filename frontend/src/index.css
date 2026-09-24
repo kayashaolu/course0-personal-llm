@@ -1,0 +1,36 @@
+.message-area pre code {
+    white-space: pre-wrap;
+    min-height: calc(100vh - 250px);
+    max-height: 25em;
+    overflow: auto;
+}
+
+.message-form {
+    height: 225px;
+}
+
+.chat-list {
+    margin-top: 20px
+}
+
+.chat-list li {
+    cursor: pointer;
+}
+
+/* BRANDING START */
+.brand-credit {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 0.75em;
+    color: #888;
+}
+
+.brand-credit img {
+    opacity: 0.7;
+}
+/* BRANDING END */
+.chat-list .selected {
+    font-weight: bold;
+}
